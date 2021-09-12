@@ -1,14 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-.app-body {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  overflow-x: hidden;
-}
-.app-body * {
-  box-sizing: border-box;
-}
-
 .menu_list {
   color: #808080;
   font-weight: 500;
@@ -16,6 +5,7 @@
   padding: 2px 5px;
   white-space: nowrap;
   overflow: scroll;
+  overflow-y: hidden;
   border-bottom: 1px solid #0000007a;
   li {
     display: inline-block;
@@ -34,6 +24,7 @@
 .app_header {
   display: flex;
   font-size: 10px;
+  justify-content: space-between;
   color: #808080;
 
   h1 {
@@ -45,6 +36,7 @@
     margin: 0;
     padding: 22px;
   }
+
   .arrow_button {
     background: transparent;
     border: none;
@@ -64,11 +56,21 @@
       color: white;
     }
   }
+}
 
-  .flex_list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
+.item_list {
+  display: flex;
+  flex-wrap: wrap;
   }
+
+.menu_list::-webkit-scrollbar {
+  height: 1px;
+}
+
+.menu_list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.menu_list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
 }

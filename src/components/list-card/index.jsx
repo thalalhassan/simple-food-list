@@ -2,11 +2,7 @@ import React from "react";
 import CardButton from "../cart-button";
 import Styles from "./list-card.module.scss";
 
-export default function ListCard({
-  menu,
-  handleOnCartUpdate,
-  mouseDownCoords,
-}) {
+export default function ListCard({ menu, handleOnCartUpdate }) {
   const {
     dish_id,
     dish_name,
@@ -20,8 +16,8 @@ export default function ListCard({
   } = menu;
 
   return (
-    <article className={Styles.card} key={dish_id} >
-      <div onDrag={mouseDownCoords}>
+    <article className={Styles.card} key={dish_id}>
+      <div>
         <img
           className={Styles.dish_type}
           src={dish_Type === 1 ? "veg.svg" : "non-veg.svg"}
@@ -29,7 +25,7 @@ export default function ListCard({
         />
       </div>
 
-      <div className={Styles.card_body} onDrag={mouseDownCoords}>
+      <div className={Styles.card_body}>
         <h2>{dish_name}</h2>
         <h3>
           {dish_currency} {dish_price}
@@ -50,7 +46,7 @@ export default function ListCard({
           ""
         )}
       </div>
-      <div onDrag={mouseDownCoords}>
+      <div>
         <img className={Styles.dish_image} src={dish_image} alt={dish_name} />
       </div>
     </article>

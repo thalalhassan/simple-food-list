@@ -39,15 +39,9 @@ function App() {
     setCartCountData(updateData);
   };
 
-  const mouseDownCoords = (e) => {
-    window.checkForDrag = e.clientX;
-    setSelectedTab(selectedTab + 1);
-    console.log({ ee: e.clientX });
-  };
-
   return (
-    <div className="App">
-      <header className="app_header">
+    <div className="app">
+      <div className="app_header">
         <button className="arrow_button" onClick={() => {}}>
           <img src="arrow.svg" alt="arrow" />
         </button>
@@ -62,38 +56,34 @@ function App() {
             )}
           </span>
         </div>
-      </header>
-      <body>
-        <div className="container">
-          <ul className="menu_list">
-            {restaurant.table_menu_list?.map(
-              ({ menu_category_id, category_dishes, menu_category }) => (
-                <li
-                  className={
-                    selectedTab === menu_category_id ? "active_li" : ""
-                  }
-                  key={menu_category_id}
-                  onClick={() => {
-                    setSelectedMenu(category_dishes);
-                    setSelectedTab(menu_category_id);
-                  }}
-                >
-                  {menu_category}
-                </li>
-              )
-            )}
-          </ul>
-          <div className="flex_list">
-            {selectedMenu.map((menu) => (
-              <ListCard
-                menu={menu}
-                handleOnCartUpdate={handleOnCartUpdate}
-                mouseDownCoords={mouseDownCoords}
-              />
-            ))}
-          </div>
+      </div>
+      <div className="container">
+        <ul className="menu_list">
+          {restaurant.table_menu_list?.map(
+            ({ menu_category_id, category_dishes, menu_category }) => (
+              <li
+                className={selectedTab === menu_category_id ? "active_li" : ""}
+                key={menu_category_id}
+                onClick={() => {
+                  setSelectedMenu(category_dishes);
+                  setSelectedTab(menu_category_id);
+                }}
+              >
+                {menu_category}
+              </li>
+            )
+          )}
+        </ul>
+        <div className="item_list">
+          {selectedMenu.map((menu) => (
+            <ListCard
+              key={menu.dish_id}
+              menu={menu}
+              handleOnCartUpdate={handleOnCartUpdate}
+            />
+          ))}
         </div>
-      </body>
+      </div>
     </div>
   );
 }

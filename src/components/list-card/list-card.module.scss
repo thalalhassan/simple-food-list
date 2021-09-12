@@ -1,7 +1,9 @@
 .card {
-  flex: 0 0 33.333333%;
-
+  flex-basis: 33.3333%;
+  flex-basis: 400px;
   display: flex;
+  justify-content: space-around;
+  // display: flex;
   border-bottom: 0.7px solid #0000007a;
   padding: 10px 0;
 
