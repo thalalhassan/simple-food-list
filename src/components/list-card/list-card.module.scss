@@ -1,14 +1,12 @@
 .card {
-  flex-basis: 33.3333%;
-  flex-basis: 400px;
+  flex-basis: 33.33%;
   display: flex;
-  justify-content: space-around;
-  // display: flex;
   border-bottom: 0.7px solid #0000007a;
   padding: 10px 0;
 
   .card_body {
     white-space: normal;
+    flex-basis: 100%;
 
     h2,
     h3 {
@@ -36,5 +34,29 @@
     width: 100%;
     margin: 0;
     height: 100%;
+  }
+}
+
+@media (max-width: 1333px) {
+  .card {
+    flex-basis: 33.33%;
+  }
+}
+
+@media (max-width: 1073px) {
+  .card {
+    flex-basis: 33.33%;
+  }
+}
+
+@media (max-width: 815px) {
+  .card {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 555px) {
+  .card {
+    flex-basis: 100%;
   }
 }

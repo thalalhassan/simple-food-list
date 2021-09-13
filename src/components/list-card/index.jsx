@@ -2,7 +2,11 @@ import React from "react";
 import CardButton from "../cart-button";
 import Styles from "./list-card.module.scss";
 
-export default function ListCard({ menu, handleOnCartUpdate }) {
+export default function ListCard({
+  menu,
+  handleOnCartUpdate,
+  cartCountData = {},
+}) {
   const {
     dish_id,
     dish_name,
@@ -33,6 +37,7 @@ export default function ListCard({ menu, handleOnCartUpdate }) {
         </h3>
         <p className={Styles.body_content}>{dish_description}</p>
         <CardButton
+          currentCount={cartCountData[dish_id] || 0}
           handleOnAddItem={(count) => {
             handleOnCartUpdate(count, dish_id);
           }}

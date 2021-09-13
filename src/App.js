@@ -77,6 +77,7 @@ function App() {
         <div className="item_list">
           {selectedMenu.map((menu) => (
             <ListCard
+              cartCountData={cartCountData}
               key={menu.dish_id}
               menu={menu}
               handleOnCartUpdate={handleOnCartUpdate}

@@ -60,8 +60,9 @@
 
 .item_list {
   display: flex;
-  flex-wrap: wrap;
-  }
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
 
 .menu_list::-webkit-scrollbar {
   height: 1px;

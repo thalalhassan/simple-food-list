@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import Styles from "./cart-button.module.scss";
 
-export default function CardButton({ handleOnAddItem, handleOnRemoveItem }) {
-  const [count, setCount] = useState(0);
+export default function CardButton({
+  handleOnAddItem,
+  handleOnRemoveItem,
+  currentCount,
+}) {
+  const [count, setCount] = useState(currentCount);
 
   const handleOnAdd = () => {
     const updateCount = count + 1;
