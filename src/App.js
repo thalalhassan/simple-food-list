@@ -50,10 +50,7 @@ function App() {
         <div className="cart">
           <img src="shopping-cart.svg" alt="shopping-cart" />
           <span className="count_span">
-            {Object.values(cartCountData).reduce(
-              (acc, c) => (c > 0 ? acc + 1 : acc),
-              0
-            )}
+            {Object.values(cartCountData).reduce((acc, c) => acc + c, 0)}
           </span>
         </div>
       </div>
